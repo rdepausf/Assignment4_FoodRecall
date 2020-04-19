@@ -33,7 +33,7 @@ namespace Assignment4_FoodRecall.APIHandlerManager
 
         public List<Results> GetData()
         {
-            string API_PATH = BASE_URL + "?limit=5";
+            string API_PATH = BASE_URL + "?limit=10";
             string apiData = "";
 
             RootObject data = null;

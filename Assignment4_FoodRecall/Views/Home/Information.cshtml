@@ -1,4 +1,68 @@
-﻿    <div class="table">
+﻿@model IEnumerable<Results>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Classification</th>
+            <th>Report Date</th>
+            <th>Postal Code</th>
+            <th>Termination Date</th>
+            <th>Recall Initiation Date</th>
+            <th>Recall Number</th>
+            <th>Recalling Firm</th>
+            <th>State</th>
+            <th>Voluntary/Mandated</th>
+            <th>Product</th>
+            <th>Product Quantity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.classification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.report_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postal_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.termination_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.recall_initiation_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.recall_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.recalling_firm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.voluntary_mandated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product_description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.product_quantity)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@*<div class="table">
         <table>
             <tr>
                 <th>Classification</th>
@@ -80,4 +144,4 @@
                 <td>Unknown</td>
             </tr>
         </table>
-    </div>
+    </div>*@

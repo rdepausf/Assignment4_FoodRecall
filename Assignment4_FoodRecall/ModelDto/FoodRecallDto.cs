@@ -1,31 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Abp.AutoMapper;
+using Assignment4_FoodRecall.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
 
-namespace Assignment4_FoodRecall.Models
+namespace Assignment4_FoodRecall.ModelDto
 {
-
-    public class Result
-    {
-        public int skip { get; set; }
-        public int limit { get; set; }
-        public int total { get; set; }
-    }
-
-    public class Meta
-    {
-        public string disclaimer { get; set; }
-        public string terms { get; set; }
-        public string license { get; set; }
-        public string last_updated { get; set; }
-        public Result results { get; set; }
-    }
-
-    public class Openfda { }
-
-    public class Results
+    [AutoMapFrom(typeof(Results))]
+    [AutoMapTo(typeof(Results))]
+    public class FoodRecallDto
     {
         public string country { get; set; }
         public string city { get; set; }
@@ -40,9 +22,6 @@ namespace Assignment4_FoodRecall.Models
         public string product_description { get; set; }
         public string report_date { get; set; }
         public string classification { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        [NotMapped]
-        public Openfda openfda { get; set; }
         public string recall_number { get; set; }
         public string recalling_firm { get; set; }
         public string initial_firm_notification { get; set; }
@@ -50,17 +29,9 @@ namespace Assignment4_FoodRecall.Models
         public string event_id { get; set; }
         public string product_type { get; set; }
         public string termination_date { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        [NotMapped]
-        public string? more_code_info { get; set; }
         public string recall_initiation_date { get; set; }
         public string postal_code { get; set; }
         public string voluntary_mandated { get; set; }
         public string status { get; set; }
-    }
-    public class RootObject
-    {
-        public Meta meta { get; set; }
-        public IList<Results> results { get; set; }
     }
 }
