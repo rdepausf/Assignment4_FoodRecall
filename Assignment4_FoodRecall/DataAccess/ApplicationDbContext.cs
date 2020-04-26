@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Assignment4_FoodRecall.Models;
-using Assignment4_FoodRecall.ModelDto;
+using FoodRecall_Group11.Models;
+using FoodRecall_Group11.ModelDto;
 
-namespace Assignment4_FoodRecall.DataAccess
+namespace FoodRecall_Group11.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {

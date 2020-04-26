@@ -1,9 +1,9 @@
 ﻿using Abp.AutoMapper;
-using Assignment4_FoodRecall.Models;
+using FoodRecall_Group11.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Assignment4_FoodRecall.ModelDto
+namespace FoodRecall_Group11.ModelDto
 {
     [AutoMapFrom(typeof(Results))]
     [AutoMapTo(typeof(Results))]

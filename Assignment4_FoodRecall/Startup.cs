@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Assignment4_FoodRecall.DataAccess;
+using FoodRecall_Group11.DataAccess;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,10 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Assignment4_FoodRecall.Models;
-using Assignment4_FoodRecall.ModelDto;
+using FoodRecall_Group11.Models;
+using FoodRecall_Group11.ModelDto;
 
-namespace Assignment4_FoodRecall
+namespace FoodRecall_Group11
 {
     public class Startup
     {
@@ -31,11 +31,12 @@ namespace Assignment4_FoodRecall
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddAutoMapper(typeof(Startup));
-            // var appSettings = Configuration.GetSection("AppSettings");
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration["Data:FoodRecall:ConnectionString"]));
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+                services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["DbConnection:ConnectionString"]));
+            else
+                services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:FoodRecall:ConnectionString"]));
 
             services.AddCors(
                 options => options.AddPolicy("AllowCors",

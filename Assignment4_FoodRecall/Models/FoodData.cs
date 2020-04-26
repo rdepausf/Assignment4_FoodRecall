@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 
-namespace Assignment4_FoodRecall.Models
+namespace FoodRecall_Group11.Models
 {
 
     public class Result
@@ -43,10 +43,11 @@ namespace Assignment4_FoodRecall.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [NotMapped]
         public Openfda openfda { get; set; }
+        [Key]
         public string recall_number { get; set; }
         public string recalling_firm { get; set; }
         public string initial_firm_notification { get; set; }
-        [Key]
+
         public string event_id { get; set; }
         public string product_type { get; set; }
         public string termination_date { get; set; }

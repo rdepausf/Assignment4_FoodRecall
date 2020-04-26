@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Assignment4_FoodRecall.Models
+namespace FoodRecall_Group11.Models
 {
     [DataContract]
     public class Visualization

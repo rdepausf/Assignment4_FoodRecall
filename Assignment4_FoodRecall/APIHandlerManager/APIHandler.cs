@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using Assignment4_FoodRecall.Models;
+using FoodRecall_Group11.Models;
 using Newtonsoft.Json;
 //using Newtonsoft.Json.Linq;
 
-namespace Assignment4_FoodRecall.APIHandlerManager
+namespace FoodRecall_Group11.APIHandlerManager
 {
     public class APIHandler
     {
@@ -33,7 +33,7 @@ namespace Assignment4_FoodRecall.APIHandlerManager
 
         public List<Results> GetData()
         {
-            string API_PATH = BASE_URL + "?limit=10";
+            string API_PATH = BASE_URL + "?limit=100";
             string apiData = "";
 
             RootObject data = null;

@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<Results>
 
-
+<p>
+    @Html.ActionLink("Back to Classifications", "Classifications")
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -22,126 +24,45 @@
 
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.classification)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.report_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.postal_code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.termination_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.recall_initiation_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.recall_number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.recalling_firm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.voluntary_mandated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.product_description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.product_quantity)
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.report_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.postal_code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.termination_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.recall_initiation_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.recall_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.recalling_firm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.voluntary_mandated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product_quantity)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.recall_number }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.recall_number })
+                </td>
+            </tr>
         }
     </tbody>
 </table>
-
-
-@*<div class="table">
-        <table>
-            <tr>
-                <th>Classification</th>
-                <th>Report Date</th>
-                <th>Postal Code</th>
-                <th>Termination Date</th>
-                <th>Recall Initiation Date</th>
-                <th>Recall Number</th>
-                <th>Recalling Firm</th>
-                <th>State</th>
-                <th>Voluntary/Mandated</th>
-                <th>Product</th>
-                <th>Product Quantity</th>
-
-            </tr>
-            <tr>
-                <td>Class II</td>
-                <td>2012-10-03</td>
-                <td>90021-1616</td>
-                <td>90021-1616</td>
-                <td>2012-09-21</td>
-                <td>F-2396-2012</td>
-                <td>M & K Trading Inc</td>
-                <td>Voluntary: Firm Initiated</td>
-                <td>CA</td>
-                <td>Seasoned Clams, 240 grams</td>
-                <td>39 units</td>
-            </tr>
-            <tr>
-                <td>Class I</td>
-                <td>2012-10-03</td>
-                <td>91706-2161</td>
-                <td>2012-10-25</td>
-                <td>2012-08-31</td>
-                <td>F-2382-2012</td>
-                <td>Ready Pac Foods Inc</td>
-                <td>Voluntary: Firm Initiated</td>
-                <td>CA</td>
-                <td>Ready PacÂ¿ Sliced Mango, 10.5oz</td>
-                <td>1544 cases</td>
-            </tr>
-            <tr>
-                <td>Class II</td>
-                <td>2012-10-03</td>
-                <td>92833-2510</td>
-                <td>2012-12-17</td>
-                <td>2012-07-12</td>
-                <td>F-2438-2012</td>
-                <td>Pulmuone Wildwood Inc</td>
-                <td>Voluntary: Firm Initiated</td>
-                <td>CA</td>
-                <td>PacÂ¿ Sliced Mango, 32 oz</td>
-                <td>602 units</td>
-            </tr>
-            <tr>
-                <td>Class II</td>
-                <td>2012-10-03</td>
-                <td>92833-2510</td>
-                <td>2012-12-17</td>
-                <td>2012-07-12</td>
-                <td>F-2436-2012</td>
-                <td>Pulmuone Wildwood Inc</td>
-                <td>Voluntary: Firm Initiated</td>
-                <td>CA</td>
-                <td>Wildwood Emerald Valley Kitchen Organic Medium Salsa</td>
-                <td>575 units</td>
-            </tr>
-            <tr>
-                <td>Class II</td>
-                <td>2012-10-03</td>
-                <td>17545-9639</td>
-                <td>2013-07-16</td>
-                <td>2012-04-17</td>
-                <td>F-2374-2012</td>
-                <td>Haldeman Mills</td>
-                <td>Voluntary: Firm Initiated</td>
-                <td>PA</td>
-                <td>labeling reads in part:" WILDWOOD Emerald Valley KITCHEN ORGANIC MEDIUM SALSA***NET WT. 397mL</td>
-                <td>Unknown</td>
-            </tr>
-        </table>
-    </div>*@

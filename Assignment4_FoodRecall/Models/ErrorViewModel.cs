@@ -1,6 +1,6 @@
 using System;
 
-namespace Assignment4_FoodRecall.Models
+namespace FoodRecall_Group11.Models
 {
     public class ErrorViewModel
     {

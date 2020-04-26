@@ -1,13 +1,13 @@
-﻿using Assignment4_FoodRecall.DataAccess;
+﻿using FoodRecall_Group11.DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using Assignment4_FoodRecall.ModelDto;
-using Assignment4_FoodRecall.Models;
+using FoodRecall_Group11.ModelDto;
+using FoodRecall_Group11.Models;
 
-namespace Assignment4_FoodRecall.Controllers
+namespace FoodRecall_Group11.Controllers
 {
     [Produces("application/json")]
     [Route("api/data")]

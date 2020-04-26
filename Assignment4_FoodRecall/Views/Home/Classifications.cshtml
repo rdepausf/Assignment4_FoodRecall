@@ -1,0 +1,26 @@
+﻿@using  FoodRecall_Group11.Models.ViewModel;
+@model List<CountbyClass>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Classification Type</th>
+            <th>Total Count</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classtype)
+                </td>
+                <td>
+                    @Html.ActionLink(item.count.ToString(), "Information", new { id = item.classtype })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
