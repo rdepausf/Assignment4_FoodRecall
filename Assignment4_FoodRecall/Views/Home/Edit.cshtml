@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Edit Page";
+}
+@model Results
+<p>
+    @Html.ActionLink("Back to Details page", "Information", new { id = Model.classification })
+</p>
+
+<p> display data here</p>
+<table>
+    <tr>
+        <td>
+            Classification
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.classification)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Recall Number
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.recall_number)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Product Description
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.product_description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Product Quantity
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.product_quantity)
+        </td>
+    </tr>
+
+</table>

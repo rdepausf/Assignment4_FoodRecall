@@ -5,9 +5,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script>
 window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
@@ -20,44 +20,44 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	},
 	data: [{
 		type: "bar",
-		indexLabel: "{label} {y}",
 		dataPoints: @Html.Raw(ViewBag.DataPoints)
 	}]
 });
 chart.render();
 }
-    </script>
+	</script>
 </head>
 <body>
-    <div id="chartContainer" style="height: 500px; width: 90%;"></div>
+	<div id="chartContainer" style="height: 500px; width: 90%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <div>
-        <div class="w3-row-padding w3-center w3-margin-top">
-            <div class="w3-third">
-                <div class="w3-card w3-container" style="min-height:260px">
-                    <h3>Class I</h3><br>
-                    <p>Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.</p>
+	<div>
+		<div class="w3-row-padding w3-center w3-margin-top">
+			<div class="w3-third">
+				<div class="w3-card w3-container" style="min-height:260px">
+					<h3>Class I</h3><br>
+					<p>Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.</p>
 
-                </div>
-            </div>
+				</div>
+			</div>
 
-            <div class="w3-third">
-                <div class="w3-card w3-container" style="min-height:260px">
-                    <h3>Class II</h3><br>
-                    <p>Dangerous or defective products that predictably could cause serious health problems or death. Examples include: food found to contain botulinum toxin, food with undeclared allergens, a label mix-up on a lifesaving drug, or a defective artificial heart valve.</p>
+			<div class="w3-third">
+				<div class="w3-card w3-container" style="min-height:260px">
+					<h3>Class II</h3><br>
+					<p>Dangerous or defective products that predictably could cause serious health problems or death. Examples include: food found to contain botulinum toxin, food with undeclared allergens, a label mix-up on a lifesaving drug, or a defective artificial heart valve.</p>
 
-                </div>
-            </div>
+				</div>
+			</div>
 
-            <div class="w3-third">
-                <div class="w3-card w3-container" style="min-height:260px">
-                    <h3>Class III</h3><br>
-                    <p>Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. Examples include: a minor container defect and lack of English labeling in a retail food.</p>
+			<div class="w3-third">
+				<div class="w3-card w3-container" style="min-height:260px">
+					<h3>Class III</h3><br>
+					<p>Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. Examples include: a minor container defect and lack of English labeling in a retail food.</p>
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html> 
