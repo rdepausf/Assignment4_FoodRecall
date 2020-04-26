@@ -33,10 +33,10 @@ namespace FoodRecall_Group11
             services.AddAutoMapper(typeof(Startup));
 
             // Use SQL Database if in Azure, otherwise, use SQLite
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+           // if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
                 services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["DbConnection:ConnectionString"]));
-            else
-                services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:FoodRecall:ConnectionString"]));
+           // else
+            //    services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:FoodRecall:ConnectionString"]));
 
             services.AddCors(
                 options => options.AddPolicy("AllowCors",
