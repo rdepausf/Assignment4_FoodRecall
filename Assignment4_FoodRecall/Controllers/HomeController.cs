@@ -69,8 +69,6 @@ namespace FoodRecall_Group11.Controllers
         [HttpGet("{id}")]
         public IActionResult Information(string id)
         {
-            id = id.Replace("%2F", "/");
-
             List<Results> details = dbContext.FoodRecall.Where(a => a.classification == id).OrderByDescending(x => x.report_date).ToList();
 
             return View(details);
@@ -94,6 +92,21 @@ namespace FoodRecall_Group11.Controllers
         {
             Results d = dbContext.FoodRecall.Where(a => a.recall_number == id).FirstOrDefault();
             return View(d);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Results res)
+        {
+            var d = dbContext.FoodRecall.Where(a => a.recall_number == res.recall_number).FirstOrDefault();
+            var newd = d;
+            newd.product_description = res.product_description;
+            newd.product_quantity = res.product_quantity;
+
+            dbContext.FoodRecall.Remove(d);
+            dbContext.SaveChanges();
+            dbContext.FoodRecall.Add(newd);
+            dbContext.SaveChanges();
+            return RedirectToAction("Information", new { id = newd.classification });
         }
 
 
