@@ -67,10 +67,15 @@ namespace FoodRecall_Group11.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Information(string id)
+        public IActionResult Information(string id, string succ)
         {
             List<Results> details = dbContext.FoodRecall.Where(a => a.classification == id).OrderByDescending(x => x.report_date).ToList();
 
+            if (succ == "True")
+                ViewBag.Success = 1;
+
+            if (succ == "edittrue")
+                ViewBag.EditSuccess = 1;
             return View(details);
         }
 
@@ -106,7 +111,7 @@ namespace FoodRecall_Group11.Controllers
             dbContext.SaveChanges();
             dbContext.FoodRecall.Add(newd);
             dbContext.SaveChanges();
-            return RedirectToAction("Information", new { id = newd.classification });
+            return RedirectToAction("Information", new { id = newd.classification, succ = "edittrue" });
         }
 
 
@@ -125,7 +130,7 @@ namespace FoodRecall_Group11.Controllers
                 //Log the error (uncomment dex variable name and add a line here to write a log.
                 //  return RedirectToAction("Delete", new { id = id, saveChangesError = true });
             }
-            return RedirectToAction("Information", new { id = type });
+            return RedirectToAction("Information", new { id = type , succ = true});
         }
         public ActionResult Visualization()
         {
